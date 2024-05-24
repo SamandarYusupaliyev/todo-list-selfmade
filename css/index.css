@@ -23,13 +23,17 @@
 
   /* Shadow */
   --shadow: 0px 35px 50px -35px rgba(194, 195, 214, 0.5);
-  /* Background */
+
+  /* Backgrounds */
   --bg: url("../img/light-bg.jpg");
   --bg-checked: url("../img/checked.svg");
   --bg-unchecked: url("../img/light-unchecked.svg");
   --bg-unchecked-hover: url("../img/unchecked-hover.svg");
   --bg-theme-toggler: url("../img/moon.svg");
   --bg-x: url("../img/light-x.svg");
+
+  /* Transition  */
+  --transition: 0.3s ease;
 }
 
 [data-theme="dark"] {
@@ -51,8 +55,8 @@
 /* FONT-FACE  */
 @font-face {
   font-family: "Josefin Sans";
-  src: url("./fonts/JosefinSans-Bold.woff2") format("woff2"),
-    url("./fonts/JosefinSans-Bold.woff") format("woff");
+  src: url("../fonts/JosefinSans-Bold.woff2") format("woff2"),
+    url("../fonts/JosefinSans-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -60,8 +64,8 @@
 
 @font-face {
   font-family: "Josefin Sans";
-  src: url("./fonts/JosefinSans-Regular.woff2") format("woff2"),
-    url("./fonts/JosefinSans-Regular.woff") format("woff");
+  src: url("../fonts/JosefinSans-Regular.woff2") format("woff2"),
+    url("../fonts/JosefinSans-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -123,18 +127,22 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: var(--white);
+  background-color: var(--white-smoke);
   color: var(--black);
   font-family: "Josefin Sans", "Arial", sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.8rem;
+  line-height: normal;
+  letter-spacing: -0.25px;
   padding: 0;
   margin: 0;
+  transition: color var(--transition), background-color var(--transition),
+    opacity var(--transition);
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 /* FOCUS-STYLES  */
@@ -145,7 +153,7 @@ img {
 
 /* CONTAINER  */
 .container {
-  max-width: 120rem;
+  max-width: 58rem;
   width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -165,7 +173,104 @@ img {
   overflow: hidden;
 }
 
-/* MAIN-CONTENT  */
-.main-content {
-  flex-grow: 1;
+/* Create New Todo Section  */
+.section-create-new-todo__inner {
+  padding-top: 7rem;
+  min-height: 30rem;
+  background-position: center center;
+  background-size: cover;
+  background-image: var(--bg);
+  background-color: var(--white);
+  transition: background-image var(--transition);
+}
+
+.section-create-new-todo__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.logo-theme-toggler-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-theme-toggler-wrapper__logo {
+  width: 16.7rem;
+  height: 4rem;
+}
+
+.theme-toggler {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+
+.theme-toggler:hover {
+  opacity: 0.8;
+}
+
+.theme-toggler:active {
+  transform: scale(0.9);
+}
+
+.theme-toggler__inner {
+  display: block;
+  width: 2.6rem;
+  height: 2.6rem;
+  background-size: contain;
+  background-image: var(--bg-theme-toggler);
+  transition: background-image var(--transition);
+}
+
+.section-create-new-todo__form {
+  position: relative;
+}
+
+.section-create-new-todo__input {
+  font-family: inherit;
+  width: 100%;
+  background-color: var(--white);
+  color: var(--twilight-blue);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  padding: 2rem 2.4rem 2rem 7.2rem;
+  border: none;
+  box-shadow: var(--shadow);
+  caret-color: var(--cornflower-blue);
+}
+
+.section-create-new-todo__input::placeholder {
+  color: var(--grayish-blue);
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 2.4rem;
+  transform: translateY(-50%);
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: none;
+  transition: background-image var(--transition);
+}
+
+.section-create-new-todo__input:placeholder-shown ~ .circle {
+  background-image: var(--bg-unchecked);
+}
+
+/* Todos  Section */
+.todos__list {
+  margin-top: -5.4rem;
+  width: 100%;
+  box-shadow: var(--shadow);
+  border-radius: 5px 5px 0 0;
+  background-color: rgb(211, 211, 196);
+  height: 300px;
 }

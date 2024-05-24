@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +19,52 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
+    <!-- Create New Todo Section  -->
+    <section class="section-create-new-todo">
+      <div class="section-create-new-todo__inner">
+        <h2 class="visually-hidden">Create new todo here</h2>
+        <div class="section-create-new-todo__container container">
+          <div class="logo-theme-toggler-wrapper">
+            <img
+              class="logo-theme-toggler-wrapper__logo"
+              src="img/logo.svg"
+              alt="Logo"
+              width="167"
+              height="40"
+            />
+            <button
+              class="logo-theme-toggler-wrapper__theme-toggler theme-toggler"
+              id="themeToggler"
+            >
+              <span class="theme-toggler__inner"></span>
+            </button>
+          </div>
+
+          <!-- Create New Todo Input  -->
+          <form class="section-create-new-todo__form" id="newTodoForm">
+            <input
+              class="section-create-new-todo__input"
+              type="text"
+              name="newTodo"
+              placeholder="Create a new todo…"
+              minlength="3"
+              maxlength="25"
+              required
+            />
+
+            <span class="circle"></span>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-todos">
+      <h1 class="visually-hidden">Todos</h1>
+      <div class="section-todos__container todos container">
+        <ul class="todos__list" id="todos"></ul>
+      </div>
+    </section>
+
     <!-- Loader -->
     <div class="loader-wrapper" id="loader" style="display: none">
       <span class="loader"></span>
