@@ -1,9 +1,51 @@
 /* CUSTOM-PROPS */
 :root {
-  --black: #000;
+  /* Light  */
   --white: #fff;
-  --blue: #3a7cfd;
-  --light-gray: #fafafa;
+  --white-smoke: #fafafa;
+  --twilight-blue: #494c6b;
+  --grayish-blue: #9495a5;
+  --lavender-gray: #e3e4f1;
+  --light-gray: #d1d2da;
+
+  /* Light-Dark */
+  --cornflower-blue: #3a7cfd;
+
+  /* Dark  */
+  --gunmetal: #25273d;
+  --dark-gunmetal: #171823;
+  --light-periwinkle: #c8cbe7;
+  --purple-navy: #5b5e7e;
+  --charcoal: #393a4b;
+  --independence: #4d5067;
+
+  --rhythm: #767992;
+
+  /* Shadow */
+  --shadow: 0px 35px 50px -35px rgba(194, 195, 214, 0.5);
+  /* Background */
+  --bg: url("../img/light-bg.jpg");
+  --bg-checked: url("../img/checked.svg");
+  --bg-unchecked: url("../img/light-unchecked.svg");
+  --bg-unchecked-hover: url("../img/unchecked-hover.svg");
+  --bg-theme-toggler: url("../img/moon.svg");
+  --bg-x: url("../img/light-x.svg");
+}
+
+[data-theme="dark"] {
+  --white: var(--gunmetal);
+  --white-smoke: var(--dark-gunmetal);
+  --twilight-blue: var(--light-periwinkle);
+  --grayish-blue: var(--purple-navy);
+  --lavender-gray: var(--charcoal);
+  --light-gray: var(--independence);
+
+  --shadow: 0px 35px 50px -35px rgba(0, 0, 0, 0.5);
+
+  --bg: url("../img/dark-bg.jpg");
+  --bg-unchecked: url("../img/dark-unchecked.svg");
+  --bg-theme-toggler: url("../img/shine.svg");
+  --bg-x: url("../img/dark-x.svg");
 }
 
 /* FONT-FACE  */
@@ -34,7 +76,7 @@
   width: 100%;
   height: 100%;
   z-index: 999;
-  background-color: var(--light-gray);
+  background-color: var(--super-light-gray);
   transition: opacity 0.3s ease;
 }
 
