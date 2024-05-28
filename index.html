@@ -69,7 +69,7 @@
     </section>
 
     <!-- Loader -->
-    <div class="loader-wrapper" id="loader" style="display: none">
+    <div class="loader-wrapper" id="loader">
       <span class="loader"></span>
     </div>
 
@@ -78,6 +78,21 @@
     <audio id="audioSelectStatus" src="audios/select-status.mp3"></audio>
     <audio id="audioCheck" src="audios/check.mp3"></audio>
     <audio id="audioAddNewTask" src="audios/add-new-task.mp3"></audio>
+
+    <!-- Templates -->
+    <template id="todoTemplate">
+      <li
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <input type="checkbox" id="todoStatus" />
+        <h3 id="todoTitle">Salom</h3>
+        <button id="deleteTodoButton">x</button>
+      </li>
+    </template>
 
     <script type="module" src="js/index.js"></script>
   </body>

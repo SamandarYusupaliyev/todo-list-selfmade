@@ -5,6 +5,10 @@ const elLoader = document.getElementById("loader"),
   elAudioCheck = document.getElementById("audioCheck"),
   elAudioAddNewTask = document.getElementById("audioAddNewTask"),
   elNewTodoForm = document.getElementById("newTodoForm"),
+  elTodoTemplate = document.getElementById("todoTemplate"),
+  elTodoStatus = document.getElementById("todoStatus"),
+  elTodoTitle = document.getElementById("todoTitle"),
+  elDeleteTodoButton = document.getElementById("deleteTodoButton"),
   elTodos = document.getElementById("todos");
 
 export {
@@ -16,4 +20,8 @@ export {
   elAudioAddNewTask,
   elNewTodoForm,
   elTodos,
+  elTodoTemplate,
+  elTodoStatus,
+  elTodoTitle,
+  elDeleteTodoButton,
 };
